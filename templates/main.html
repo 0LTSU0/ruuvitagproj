@@ -1,0 +1,36 @@
+<!doctype html>
+<head>
+    {% block head %}
+    <title>RuuviTag data</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+    {% endblock %}
+</head>
+
+<div>
+    <h1>RuuviTag Data</h1>
+</div>
+<div>
+    <h2>Olohuone</h2>
+    <a>Temperature: </a><a id="temp_o">xx°C</a><br>
+    <a>Humidity: </a><a id="humi_o">xx%</a><br>
+    <a>Pressure: </a><a id="pressure_o">xxxhPa</a><br>
+    <a>Battery: </a><a id="battery_o">xx</a><br>
+    <a>Last updated: </a><a id="updatetime_o">xx</a>
+    <br>
+    <br>
+    <a href="{{ url_for('view_o_olddata') }}">History</a>
+</div>
+<br>
+<br>
+<div>
+    <h2>Makkari</h2>
+    <a>Temperature: </a><a id="temp_m">xx°C</a><br>
+    <a>Humidity: </a><a id="humi_m">xx%</a><br>
+    <a>Pressure: </a><a id="pressure_m">xxxhPa</a><br>
+    <a>Battery: </a><a id="battery_m">xx</a><br>
+    <a>Last updated: </a><a id="updatetime_m">xx</a>
+    <br>
+    <br>
+    <a href="{{ url_for('view_m_olddata') }}">History</a>
+</div>

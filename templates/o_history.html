@@ -1,0 +1,15 @@
+<!doctype html>
+
+<div>
+    <h1>RuuviTag Data</h1>
+</div>
+<div>
+    <h2>Raw history data for olohuone (last 50 records)</h2>
+    <ol style="list-style: none;">
+        {%for i in range(0, len)%}
+            <li>{{history_data[i]}}</li>
+        {%endfor%}
+    </ol>
+    <a href="{{ url_for('main_page') }}">Live View</a>
+</div>
+

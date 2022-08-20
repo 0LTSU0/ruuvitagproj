@@ -1,6 +1,7 @@
 import mysql.connector
 from mysql.connector import Error
 import pandas as pd
+import time
 
 
 def create_db_connection(host_name, user_name, db_name):
@@ -30,7 +31,7 @@ def execute_query(connection, query):
 
 def ruuvi_to_db(table, datadict):
     connection = create_db_connection("localhost", "pi", "ruuvidata")
-    insert_q = "INSERT INTO {} (humidity, temperature, pressure, battery) VALUES ({}, {}, {}, {});".format(table, datadict.get("humidity"), datadict.get("temperature"), datadict.get("pressure"), datadict.get("battery"))
+    insert_q = "INSERT INTO {} (humidity, temperature, pressure, battery, timestamp) VALUES ({}, {}, {}, {}, {});".format(table, datadict.get("humidity"), datadict.get("temperature"), datadict.get("pressure"), datadict.get("battery"), time.time())
     if connection:
         execute_query(connection, insert_q)
 
